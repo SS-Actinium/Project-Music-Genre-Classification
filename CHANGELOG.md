@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 — 2026-08-02
+
+### Fixed
+- TensorFlow pin for **Python 3.13** (`>=2.20,<2.23`; old `<2.20` blocked install)
+- TF moved to optional extra `[ml]` so `pip install -e .` succeeds without TF
+- `python -m music_genre` entry (`__main__.py`) when `music-genre` script not on PATH
+
 ## 0.2.0 — 2026-08-02
 
 ### Added

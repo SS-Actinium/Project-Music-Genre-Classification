@@ -27,23 +27,36 @@ git clone https://github.com/SS-Actinium/Project-Music-Genre-Classification.git
 cd Project-Music-Genre-Classification
 
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-source .venv/bin/activate
+# Windows:
+.\.venv\Scripts\Activate.ps1
+# if scripts blocked:
+# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
-pip install -r requirements.txt
-pip install -e .
+# Core package (CLI + API shell; no TensorFlow yet)
+pip install -e ".[dev]"
 
-# smoke (no full TF needed for core tests)
-pip install numpy librosa soundfile scikit-learn pytest
+# TensorFlow for predict/train (Python 3.13 needs 2.20+)
+pip install "tensorflow>=2.20,<2.23"
+# or: pip install -e ".[ml]"
+
 pytest -q
 python scripts/smoke.py
+```
+
+**Windows note:** if `music-genre` is not on PATH after install, use:
+
+```powershell
+python -m music_genre predict path\to\song.wav --top-k 3
+python -m music_genre serve --port 8080
 ```
 
 ### Predict
 
 ```bash
+# after: pip install -e .  AND  pip install "tensorflow>=2.20,<2.23"
 music-genre predict path/to/song.wav --top-k 3
-music-genre predict path/to/song.mp3 --json --segments 10
+# or:
+python -m music_genre predict path/to/song.mp3 --json --segments 10
 ```
 
 Uses multi-segment **mean probability** voting (not first-3-seconds only).
