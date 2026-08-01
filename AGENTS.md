@@ -7,7 +7,7 @@
 | Field | Value |
 |-------|--------|
 | Name | Project Music Genre Classification |
-| Version | **0.2.0** |
+| Version | **0.2.2** |
 | Stack | Python 3.10+, librosa, TensorFlow/Keras, FastAPI |
 | Dataset | GTZAN (not vendored) |
 | Models | `models/genre_classifier.keras`, `models/genre_mapping.json` |
@@ -36,3 +36,8 @@ Software Eng · Research/ML · Security · Web/API · DevOps · QA · Documentat
 - `python scripts/smoke.py` → `SMOKE_OK`  
 - No secrets in git  
 - README limitations section intact  
+- **Versioning:** bump semver + CHANGELOG + annotated tag `vX.Y.Z` + push on every meaningful ship  
+
+## Git versioning (standing)
+
+See global rule `~/.grok/rules/project-git-workflow.md` — always maintain git log, CHANGELOG, and tags.
