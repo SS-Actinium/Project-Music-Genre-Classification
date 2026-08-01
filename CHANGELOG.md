@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.2 — 2026-08-02
+
+### Fixed
+- Inference when Windows Application Control blocks **numba** (librosa path)
+- Load audio via **soundfile** + **scipy/numpy MFCC** fallback
+- Allow `.mpeg` / `.mpga` suffixes for uploads/CLI
+
 ## 0.2.1 — 2026-08-02
 
 ### Fixed

@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
-PACKAGE_VERSION = "0.2.1"
+PACKAGE_VERSION = "0.2.2"
 
 # Canonical GTZAN genres — alphabetical (matches training remap in original notebook)
 GENRES: list[str] = [
