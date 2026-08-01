@@ -37,7 +37,7 @@ SKIP_FILES = frozenset({"jazz.00054.wav"})
 
 # API / CLI safety
 MAX_UPLOAD_BYTES = 20 * 1024 * 1024  # 20 MiB
-ALLOWED_AUDIO_SUFFIXES = frozenset({".wav", ".mp3", ".flac", ".ogg", ".m4a"})
+ALLOWED_AUDIO_SUFFIXES = frozenset({".wav", ".mp3", ".mpeg", ".mpga", ".flac", ".ogg", ".m4a"})
 
 
 @dataclass(frozen=True)
