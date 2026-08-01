@@ -36,6 +36,24 @@ class PredictionResult:
 
 
 _model_cache: dict[str, Any] = {}
+_tf_quiet_done = False
+
+
+def configure_tensorflow_quiet() -> None:
+    """Reduce TensorFlow/oneDNN/absl console noise for CLI use."""
+    global _tf_quiet_done
+    if _tf_quiet_done:
+        return
+    import os
+    import warnings
+
+    os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
+    os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
+    os.environ.setdefault("ABSL_MIN_LOG_LEVEL", "3")
+    warnings.filterwarnings("ignore", category=UserWarning, module="keras")
+    warnings.filterwarnings("ignore", message=".*Skipping variable loading for optimizer.*")
+    warnings.filterwarnings("ignore", message=".*TensorFlow GPU support is not available.*")
+    _tf_quiet_done = True
 
 
 def load_keras_model(model_path: str | Path):
@@ -45,8 +63,13 @@ def load_keras_model(model_path: str | Path):
         raise ModelNotFoundError(f"Model not found: {path}")
     key = str(path)
     if key not in _model_cache:
+        configure_tensorflow_quiet()
         import tensorflow as tf
 
+        try:
+            tf.get_logger().setLevel("ERROR")
+        except Exception:
+            pass
         _model_cache[key] = tf.keras.models.load_model(path)
     return _model_cache[key]
 

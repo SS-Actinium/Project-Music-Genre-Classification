@@ -111,6 +111,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    # Quiet TF before any import that may load it (predict/train/serve)
+    import os
+
+    os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
+    os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
+    os.environ.setdefault("ABSL_MIN_LOG_LEVEL", "3")
+
     parser = build_parser()
     args = parser.parse_args(argv)
     # Defaults printed for transparency when missing

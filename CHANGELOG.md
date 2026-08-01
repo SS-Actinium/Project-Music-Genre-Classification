@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.3 — 2026-08-02
+
+### Fixed
+- Quieter CLI: suppress TensorFlow / oneDNN / optimizer-load noise on `predict`
+
 ## 0.2.2 — 2026-08-02
 
 ### Fixed

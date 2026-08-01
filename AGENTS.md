@@ -7,7 +7,7 @@
 | Field | Value |
 |-------|--------|
 | Name | Project Music Genre Classification |
-| Version | **0.2.2** |
+| Version | **0.2.3** |
 | Stack | Python 3.10+, librosa, TensorFlow/Keras, FastAPI |
 | Dataset | GTZAN (not vendored) |
 | Models | `models/genre_classifier.keras`, `models/genre_mapping.json` |
