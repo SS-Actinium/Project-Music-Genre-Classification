@@ -1,0 +1,15 @@
+# Core (inference + train)
+numpy>=1.24,<3
+librosa>=0.10,<0.12
+soundfile>=0.12
+scikit-learn>=1.3
+# TensorFlow: prefer CPU wheel in CI; install GPU yourself if needed
+tensorflow>=2.15,<2.20
+
+# API
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9
+
+# Dev / test
+pytest>=8.0

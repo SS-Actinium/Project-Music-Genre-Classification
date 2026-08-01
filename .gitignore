@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+
+# Data & caches (do not commit GTZAN)
+Data/
+data/
+data.json
+*.tar.gz
+genres.tar.gz
+external_test_song.mp3
+.cache/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Local auth noise
+.gh-auth*
+GITHUB-AUTH-CODE.txt
