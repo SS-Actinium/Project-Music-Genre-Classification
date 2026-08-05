@@ -1,6 +1,6 @@
 # AGENTS.md — Music Genre Classification
 
-**Product OS** for this repo. Agency identity: AETHER (see `../agency-memory/` when operating in the multi-project workspace).
+**Product OS** for this repo. Shared workspace standards live in `../agency-memory/` when present (local pack only — not part of this product brand).
 
 ## Product
 

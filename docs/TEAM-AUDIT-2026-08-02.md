@@ -1,7 +1,7 @@
 # Multi-team audit — 30 parallel specialists (2026-08-02)
 
 **Project:** Project-Music-Genre-Classification  
-**Orchestrator:** AETHER Executive  
+**Orchestrator:** Executive review  
 **Method:** 30 parallel subagents (Security, ML, Web, DevOps, QA, Docs, Supply chain, Product, etc.)
 
 ## Pre-improvement state

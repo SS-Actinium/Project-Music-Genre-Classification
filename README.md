@@ -117,4 +117,4 @@ MIT for **this code**. Dataset and any third-party audio remain under their resp
 
 ## Agency / development
 
-Improved under **AETHER** multi-department workflow (Security, ML, Web, DevOps, QA, Docs). Product OS: [AGENTS.md](AGENTS.md).
+Improved under a multi-department workflow (Security, ML, Web, DevOps, QA, Docs). Product OS: [AGENTS.md](AGENTS.md).
